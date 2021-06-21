@@ -1,0 +1,5 @@
+names:
+- cart
+nc: 1
+train: /content/drive/My Drive/capstone1-final-128/dataset/train.txt
+val: /content/drive/My Drive/capstone1-final-128/dataset/val.txt
