@@ -26,33 +26,33 @@
 
 ## 주요 기능
 
-1. 객체 인식
-    * 복도에서의 차량 카트 이미지를 촬영하여 커스텀 데이터셋을 제작
-    * YOLO-v5 모델 중 가장 초당 프레임 수 가 높은 YOLO-v5s에 커스텀 데이터셋을 학습
-    * 라즈베리파이에 부착된 웹캠을 통해 실시간으로 전방 차량 인식
+### 객체 인식  
+  * 복도에서의 차량 카트 이미지를 촬영하여 커스텀 데이터셋을 제작
+  * YOLO-v5 모델 중 가장 초당 프레임 수 가 높은 YOLO-v5s에 커스텀 데이터셋을 학습
+  * 라즈베리파이에 부착된 웹캠을 통해 실시간으로 전방 차량 인식
   
-2. 거리 측정
-    * 객체 인식 시 나타나는 Bounding box의 좌표값을 추출하여 대상과의 거리가 1m 일 때 Bounding box의 높이와 너비값을 측정
-    * 이후 인식된 객체의 Bounding box 높이와 너비값과 1m 일 때의 Bounding box 높이와 너비값의 비례식을 통해 거리를 측정
+### 거리 측정
+  * 객체 인식 시 나타나는 Bounding box의 좌표값을 추출하여 대상과의 거리가 1m 일 때 Bounding box의 높이와 너비값을 측정
+  * 이후 인식된 객체의 Bounding box 높이와 너비값과 1m 일 때의 Bounding box 높이와 너비값의 비례식을 통해 거리를 측정
     
-3. 거리 유지
-    * 측정된 거리를 기반으로 동작을 나누어 시리얼 통신을 통해 동작 신호를 cart를 조작하는 STM보드에 전달
-    * STM보드에서 전달받은 신호를 기반으로 PWM 제어를 통해 차간 거리가 유지되도록 속도 조절
+### 거리 유지
+  * 측정된 거리를 기반으로 동작을 나누어 시리얼 통신을 통해 동작 신호를 cart를 조작하는 STM보드에 전달
+  * STM보드에서 전달받은 신호를 기반으로 PWM 제어를 통해 차간 거리가 유지되도록 속도 조절
 
 <br>
 
 ## 시스템 구조
 
-### 거리유지 시스템 구조
-
-<p align="center">
-  <img src="./img/1.png" width="65%" />
-</p>
-
 ### 겍체 인식 및 거리측정 시스템 구조
 
 <p align="center">
   <img src="./img/2.png" width="65%" />
+</p>
+
+### 거리유지 시스템 구조
+
+<p align="center">
+  <img src="./img/1.png" width="65%" />
 </p>
 
 ### 거리측정 알고리즘
@@ -110,6 +110,8 @@ adaptive-cruise-control
 | 3m | 2.85m | 2.94m | 5% |
 | 5m | 4.65m | 5.05m | 7% |
 
+<br>
+
 ### 거리유지
 
 #### 동작 설정
@@ -147,11 +149,11 @@ adaptive-cruise-control
 
 ### 거리 예측을 바탕으로 카트 구동
 
-1. https://github.com/seoh02h/ICNS-Self-Driving-Test 을 노트북에 클론한다.
+1. https://github.com/icns-distributed-cloud/Self-driving-project 을 노트북에 클론한다.
 
-2. `ICNS-Self-Driving-Test/robot_arm_basic/Src/main.c`을 `adaptive-cruise-control/cart/main_arm.c`으로 대치시킨다.
+2. `Self-driving-project/2021_self_driving_cart/robot_arm_basic/Src/main.c`을 `adaptive-cruise-control/cart/main_arm.c`으로 대치시킨다.
 
-3. `ICNS-Self-Driving-Test/cart_basic/Src/main.c`을 `adaptive-cruise-control/cart/main_cart.c`으로 대치시킨다.
+3. `Self-driving-project/2021_self_driving_cart/cart/Src/main.c`을 `adaptive-cruise-control/cart/main_cart.c`으로 대치시킨다.
 
 4. [ICNS Lab](https://github.com/icns-distributed-cloud)에서 제작한 카트에 있는 `STM-Arm Board`, `STM-Cart Board`에 각 코드를 디버깅한다.
 
@@ -167,13 +169,11 @@ adaptive-cruise-control
 
 * Ultralytics, YOLO v5(2020), Retrieved June, 10, 2020, from https://github.com/ultralytics/yolov5
 
-* https://global.honda/newsroom/news/2020/4201111eng.html
-
 * 이동석 외 4 저, 스테레오 카메라를 이용한 이동객체의 실시간 추적과 거리 측정시스템(2009)
 
 * 이강원 외 1 저, 지형 공간정보체계 용어사전(2016)
 
-* https://github.com/seoh02h/ICNS-Self-Driving-Test
+* https://github.com/icns-distributed-cloud/Self-driving-project
 
 * https://ropiens.tistory.com/44
 
