@@ -15,7 +15,8 @@
 ## 프로젝트 소개
 
 <p align="center">
-  <img src="./img/1.gif" width="40%" />
+  <img src="./img/camera.gif" width="40%" />
+  <img src="./img/drive.gif" width="47%" />
 </p>
 
 <br>
